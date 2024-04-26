@@ -1,7 +1,7 @@
-class Building {
+export default class Building {
   constructor(sqft) {
     if (
-      this.constractor !== Building
+      this.constructor !== Building
       && typeof this.evacuationWarningMesagge !== 'function'
     ) {
       throw new Error(
@@ -15,9 +15,7 @@ class Building {
     return this._sqft;
   }
 
-  set sqft(value) {
-    this._sqft = value;
+  set sqft(sqft) {
+    this._sqft = sqft;
   }
 }
-
-export default Building;
