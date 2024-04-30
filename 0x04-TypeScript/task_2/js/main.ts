@@ -40,6 +40,18 @@ function createEmployee(salary: number | string): Director | Teacher {
     : new Director();
 }
 
-console.log(createEmployee(200));
-console.log(createEmployee(1000));
-console.log(createEmployee("$500"));
+//console.log(createEmployee(200));
+//console.log(createEmployee(1000));
+//console.log(createEmployee("$500"));
+
+const isDirector = (employee: Teacher | Director): boolean =>
+  employee instanceof Director;
+
+const executeWork = (employee): string => {
+  return isDirector(employee)
+    ? employee.workDirectorTasks()
+    : employee.workTeacherTasks();
+};
+
+console.log(executeWork(createEmployee(200)));
+console.log(executeWork(createEmployee(1000)));
