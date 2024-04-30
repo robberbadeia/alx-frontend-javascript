@@ -31,9 +31,9 @@ function createEmployee(salary) {
         ? new Teacher()
         : new Director();
 }
-//console.log(createEmployee(200));
-//console.log(createEmployee(1000));
-//console.log(createEmployee("$500"));
+console.log(createEmployee(200));
+console.log(createEmployee(1000));
+console.log(createEmployee("$500"));
 var isDirector = function (employee) {
     return employee instanceof Director;
 };
@@ -44,3 +44,8 @@ var executeWork = function (employee) {
 };
 console.log(executeWork(createEmployee(200)));
 console.log(executeWork(createEmployee(1000)));
+var teachClass = function (todayClass) {
+    return todayClass === "Math" ? "Teaching Math" : "Teaching History";
+};
+console.log(teachClass('Math'));
+console.log(teachClass('History'));

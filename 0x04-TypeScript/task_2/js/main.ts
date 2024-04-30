@@ -40,9 +40,9 @@ function createEmployee(salary: number | string): Director | Teacher {
     : new Director();
 }
 
-//console.log(createEmployee(200));
-//console.log(createEmployee(1000));
-//console.log(createEmployee("$500"));
+console.log(createEmployee(200));
+console.log(createEmployee(1000));
+console.log(createEmployee("$500"));
 
 const isDirector = (employee: Teacher | Director): boolean =>
   employee instanceof Director;
@@ -55,3 +55,11 @@ const executeWork = (employee): string => {
 
 console.log(executeWork(createEmployee(200)));
 console.log(executeWork(createEmployee(1000)));
+
+type Subjects = "Math" | "History";
+
+const teachClass = (todayClass: Subjects): string =>
+  todayClass === "Math" ? "Teaching Math" : "Teaching History";
+
+console.log(teachClass('Math'));
+console.log(teachClass('History'));
