@@ -44,10 +44,10 @@ console.log(createEmployee(200));
 console.log(createEmployee(1000));
 console.log(createEmployee("$500"));
 
-const isDirector = (employee: Teacher | Director): boolean =>
+const isDirector = (employee: Teacher | Director): employee is Director =>
   employee instanceof Director;
 
-const executeWork = (employee): string => {
+const executeWork = (employee: Teacher | Director): string => {
   return isDirector(employee)
     ? employee.workDirectorTasks()
     : employee.workTeacherTasks();
@@ -61,5 +61,5 @@ type Subjects = "Math" | "History";
 const teachClass = (todayClass: Subjects): string =>
   todayClass === "Math" ? "Teaching Math" : "Teaching History";
 
-console.log(teachClass('Math'));
-console.log(teachClass('History'));
+console.log(teachClass("Math"));
+console.log(teachClass("History"));
