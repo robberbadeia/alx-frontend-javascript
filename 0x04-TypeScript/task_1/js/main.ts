@@ -1,10 +1,10 @@
 interface Teacher {
-  readonly firstName: string;
-  readonly lastName: string;
+  readonly firstName: string; // readonly ensures it can only be set during initialization
+  readonly lastName: string; // readonly ensures it can only be set during initialization
   fullTimeEmployee: boolean;
   yearsOfExperience?: number;
   location: string;
-  [key: string]: any;
+  [key: string]: any; // Allow dynamic attributes
 }
 
 const teacher3: Teacher = {
@@ -41,10 +41,14 @@ export const printTeacher: printTeacherFunction = (
 
 console.log(printTeacher("john", "doe"));
 
+// Interface describing the class functionality (includes properties and methods)
 interface StudentClassInterface {
   firstName: string;
   lastName: string;
+  workOnHomework(): string; // Method to indicate working on homework
+  displayName(): string; // Method to display the first name
 }
+// Interface describing the constructor of the class
 interface StudentClassConstructorInterface {
   new (firstName: string, lastName: string): StudentClassInterface;
 }
